@@ -1,0 +1,13 @@
+.comp{
+    transform: translateX(0%);
+    animation: move 15s linear infinite;
+}
+
+@keyframes move {
+    0%{
+        transform: translateX(-0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
