@@ -1,8 +1,5 @@
 "use client";
-import {
-  asycallinternships,
-  asycalljobs,
-} from "@/store/Actions/studentAction";
+import { asycallinternships, asycalljobs } from "@/store/Actions/studentAction";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,12 +10,11 @@ const StudentAuth = ({ children }) => {
 
   const { isAuthenticate } = useSelector((state) => state.studentReducer);
 
-
   useEffect(() => {
-    if (!isAuthenticate) Router.push("/student");
+    if (!isAuthenticate) Router.push("/");
     if (isAuthenticate) {
-      dispatch(asycalljobs())
-      dispatch(asycallinternships())
+      dispatch(asycalljobs());
+      dispatch(asycallinternships());
     }
   }, [isAuthenticate]);
   return children;

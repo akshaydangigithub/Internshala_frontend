@@ -1,5 +1,6 @@
 "use client";
 
+import Register from "@/components/registerEmploye/Register";
 import { asynsignupemploye } from "@/store/Actions/employeAction";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -11,7 +12,6 @@ const page = () => {
   const Router = useRouter();
 
   const { isAuthenticate } = useSelector((state) => state.employeReducer);
-
 
   useEffect(() => {
     if (isAuthenticate) Router.push("/employe/auth");
@@ -30,11 +30,14 @@ const page = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <button className="btn btn-success" onClick={signupHandler}>
+    <>
+      <Register />
+      <div className="container mt-5">
+        {/* <button className="btn btn-success" onClick={signupHandler}>
         signup
-      </button>
-    </div>
+      </button> */}
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Navbar from "@/components/navbar/Navbar";
 import {
   asynccurrentstudent,
   asynsignoutstudent,
@@ -26,7 +27,8 @@ const Studentlayout = ({ children }) => {
   };
   return (
     <>
-      <nav className="container">
+      <Navbar />
+      {/* <nav className="container">
         <Link href={isAuthenticate ? "/student/auth" : "/student"}>Home</Link>{" "}
         <br />
         {isAuthenticate ? (
@@ -51,9 +53,9 @@ const Studentlayout = ({ children }) => {
             <Link href="/student/signup">Signup</Link>
           </>
         )}
-      </nav>
+      </nav> */}
 
-      {children}
+      <div className="bg-white">{children}</div>
     </>
   );
 };

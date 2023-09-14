@@ -9,24 +9,43 @@ import "swiper/css/navigation";
 import "./swiper.css";
 import { Pagination } from "swiper/modules";
 import { Navigation } from "swiper/modules";
+import { useSelector } from "react-redux";
 
 const HomeHero = () => {
+  const { student, isAuthenticate } = useSelector(
+    (state) => state.studentReducer
+  );
   return (
     <>
-      <div className="container mt-5">
+      <div className="container pt-5">
         <div>
-          <h2 style={{ color: "#333" }} className="text-center fw-bold">
-            Make Your Dream Career A Reality
-          </h2>
-          <Image
-            src="/underline.png"
-            width={270}
-            height={50}
-            className="mx-auto d-block ps-5"
-            alt="underline"
-          />
+          {student ? (
+            <div>
+              <h2 style={{ color: "#333" }} className="text-center fw-bold">
+                Hi, {student.firstname}! ✋
+              </h2>
+              <h5 style={{ color: "#333" }} className="text-center">
+                Let’s help you land your dream career
+              </h5>
+            </div>
+          ) : (
+            <h2 style={{ color: "#333" }} className="text-center fw-bold">
+              Make Your Dream Career A Reality
+            </h2>
+          )}
+          {isAuthenticate ? (
+            ""
+          ) : (
+            <Image
+              src="/underline.png"
+              width={270}
+              height={50}
+              className="mx-auto d-block ps-5"
+              alt="underline"
+            />
+          )}
         </div>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center mt-4">
           <h3 style={{ color: "#333" }} className="text-center fw-bold m-0">
             Trending on Internshala
           </h3>
@@ -39,7 +58,7 @@ const HomeHero = () => {
           />
         </div>
 
-        <div style={{height:"22rem"}} className="mt-5 px-5 swiper-container">
+        <div style={{ height: "22rem" }} className="mt-5 px-5 swiper-container">
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -51,25 +70,25 @@ const HomeHero = () => {
             modules={[Pagination, Navigation]}
             className="mySwiper"
           >
-            <SwiperSlide style={{ height: 200 , borderRadius:20}}>
+            <SwiperSlide style={{ height: 200, borderRadius: 20 }}>
               <Image src="/img1.png" width={300} height={100} alt="banner" />
             </SwiperSlide>
-            <SwiperSlide style={{ height: 200 , borderRadius:20}}>
+            <SwiperSlide style={{ height: 200, borderRadius: 20 }}>
               <Image src="/img2.png" width={300} height={100} alt="banner" />
             </SwiperSlide>
-            <SwiperSlide style={{ height: 200 , borderRadius:20}}>
+            <SwiperSlide style={{ height: 200, borderRadius: 20 }}>
               <Image src="/img3.png" width={300} height={100} alt="banner" />
             </SwiperSlide>
-            <SwiperSlide style={{ height: 200 , borderRadius:20}}>
+            <SwiperSlide style={{ height: 200, borderRadius: 20 }}>
               <Image src="/img4.png" width={300} height={100} alt="banner" />
             </SwiperSlide>
-            <SwiperSlide style={{ height: 200 , borderRadius:20}}>
+            <SwiperSlide style={{ height: 200, borderRadius: 20 }}>
               <Image src="/img5.png" width={300} height={100} alt="banner" />
             </SwiperSlide>
-            <SwiperSlide style={{ height: 200 , borderRadius:20}}>
+            <SwiperSlide style={{ height: 200, borderRadius: 20 }}>
               <Image src="/img6.png" width={300} height={100} alt="banner" />
             </SwiperSlide>
-            <SwiperSlide style={{ height: 200 , borderRadius:20}}>
+            <SwiperSlide style={{ height: 200, borderRadius: 20 }}>
               <Image src="/img7.png" width={300} height={100} alt="banner" />
             </SwiperSlide>
           </Swiper>

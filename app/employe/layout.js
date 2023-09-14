@@ -1,5 +1,6 @@
 "use client";
 
+import NavbarTwo from "@/components/navbarTwo/NavbarTwo";
 import {
   asynccurrentemploye,
   asynsignoutemploye,
@@ -26,7 +27,8 @@ const employelayout = ({ children }) => {
   };
   return (
     <>
-      <nav className="container">
+      <NavbarTwo />
+      {/* <nav className="container">
         <Link href={isAuthenticate ? "/employe/auth" : "/employe"}>Home</Link>{" "}
         <br />
         {isAuthenticate ? (
@@ -46,9 +48,9 @@ const employelayout = ({ children }) => {
             <Link href="/employe/signup">Signup</Link>
           </>
         )}
-      </nav>
+      </nav> */}
 
-      {children}
+      <div className="bg-white">{children}</div>
     </>
   );
 };

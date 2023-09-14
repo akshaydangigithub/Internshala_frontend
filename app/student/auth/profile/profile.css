@@ -1,0 +1,16 @@
+.image_div{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: red;
+}
+
+.image_div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.links{
+    
+}

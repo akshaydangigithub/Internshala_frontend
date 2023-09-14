@@ -1,5 +1,6 @@
 "use client";
 
+import LoginEmploye from "@/components/loginEmploye/LoginEmploye";
 import { asynsigninemploye } from "@/store/Actions/employeAction";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -28,13 +29,16 @@ const page = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <button className="btn btn-danger" onClick={signinHandler}>
-        signin
-      </button>
-      <br />
-      <Link href="/employe/forget">Forget password</Link>
-    </div>
+    <>
+      <LoginEmploye />
+      {/* <div className="container mt-5">
+        <button className="btn btn-danger" onClick={signinHandler}>
+          signin
+        </button>
+        <br />
+        <Link href="/employe/forget">Forget password</Link>
+      </div> */}
+    </>
   );
 };
 

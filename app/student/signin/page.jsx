@@ -1,5 +1,6 @@
 "use client";
 
+import LoginStudent from "@/components/loginStudent/LoginStudent";
 import { asynsigninstudent } from "@/store/Actions/studentAction";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -13,8 +14,6 @@ const page = () => {
 
   const { isAuthenticate } = useSelector((state) => state.studentReducer);
 
-  console.log(isAuthenticate);
-
   useEffect(() => {
     if (isAuthenticate) Router.push("/student/auth");
   }, [isAuthenticate]);
@@ -27,15 +26,17 @@ const page = () => {
     dispatch(asynsigninstudent(student));
   };
 
-
   return (
-    <div className="container mt-5">
-      <button className="btn btn-danger" onClick={signinHandler}>
-        signin
-      </button>
-      <br />
-      <Link href="/student/forget">Forget password</Link>
-    </div>
+    <>
+    <LoginStudent/>
+      {/* <div className="container mt-5">
+        <button className="btn btn-danger" onClick={signinHandler}>
+          signin
+        </button>
+        <br />
+        <Link href="/student/forget">Forget password</Link>
+      </div> */}
+    </>
   );
 };
 

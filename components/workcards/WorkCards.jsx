@@ -15,16 +15,6 @@ import { LiaMoneyBillSolid } from "react-icons/lia";
 import { AiOutlineRight } from "react-icons/ai";
 import Link from "next/link";
 
-const categoryLinks = [
-  "Big brands",
-  "Work from home",
-  "Part-time",
-  "MBA",
-  "Engineering",
-  "Media",
-  "Design",
-  "Data Science",
-];
 
 const WorkCards = ({ head }) => {
   return (
@@ -34,23 +24,6 @@ const WorkCards = ({ head }) => {
           <h3 style={{ color: "#333" }} className="text-center fw-bold">
             {head}
           </h3>
-          <p style={{ color: "#464849" }} className="text-center fs-6">
-            POPULAR CATEGORIES:
-          </p>
-          <div className="d-flex align-items-center justify-content-center mt-4">
-            {categoryLinks.map((link, index) => (
-              <h6
-                key={index}
-                className={`${
-                  index == 0
-                    ? "category-link me-3 active"
-                    : "category-link me-3"
-                }`}
-              >
-                {link}
-              </h6>
-            ))}
-          </div>
           <div className="mt-5 px-5 swiper-container bg-light">
             <Swiper
               slidesPerView={3}

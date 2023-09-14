@@ -1,8 +1,9 @@
 "use client";
-
+import Register from "@/components/registerStudent/Register";
 import { asynsignupstudent } from "@/store/Actions/studentAction";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const page = () => {
@@ -30,12 +31,16 @@ const page = () => {
     dispatch(asynsignupstudent(newStudent));
   };
 
+
   return (
-    <div className="container mt-5">
-      <button className="btn btn-success" onClick={signupHandler}>
-        signup
-      </button>
-    </div>
+    <>
+      <Register />
+      {/* <div className="container mt-5">
+        <button className="btn btn-success" onClick={signupHandler}>
+          signup
+        </button>
+      </div> */}
+    </>
   );
 };
 
